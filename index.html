@@ -3,280 +3,236 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaluC��O das Promoções</title>
+  <title>Malucão das Promoções - Grupo VIP</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
   <style>
     body {
       box-sizing: border-box;
-    }
-    
-    .font-bangers {
-      font-family: 'Bebas Neue', cursive;
-      letter-spacing: 2px;
-    }
-    
-    .font-poppins {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(37, 211, 102, 0.8), 0 0 60px rgba(37, 211, 102, 0.5); }
-    }
-    
-    @keyframes shake {
-      0%, 100% { transform: translateX(0) rotate(0); }
-      25% { transform: translateX(-5px) rotate(-2deg); }
-      75% { transform: translateX(5px) rotate(2deg); }
+      font-family: 'Poppins', sans-serif;
     }
     
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
+      0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
     
-    @keyframes countdown-pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(234, 179, 8, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(234, 179, 8, 0.8); }
     }
     
-    .btn-whatsapp {
-      animation: pulse-glow 2s infinite, shake 3s infinite;
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
     }
     
-    .btn-whatsapp:hover {
-      animation: pulse-glow 1s infinite;
-      transform: scale(1.05);
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
     }
     
     .float-animation {
       animation: float 3s ease-in-out infinite;
     }
     
-    .urgency-badge {
-      animation: countdown-pulse 1s infinite;
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
     }
     
-    .carousel-track {
-      display: flex;
-      width: fit-content;
+    .shake-animation {
+      animation: shake 0.5s ease-in-out infinite;
     }
     
-    .carousel-wrapper {
-      overflow: hidden;
-      width: 100%;
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fbbf24;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
     }
     
-    .carousel-inner {
-      display: flex;
-      animation: scroll 30s linear infinite;
+    .btn-whatsapp:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
     }
     
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .btn-telegram:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
     }
     
-    .fire-emoji {
-      display: inline-block;
-      animation: shake 0.5s infinite;
+    .gradient-text {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full font-poppins">
-  <div id="app-wrapper" class="w-full h-full overflow-auto bg-gradient-to-br from-gray-900 via-orange-950 to-gray-900"><!-- Urgency Bar -->
-   <div id="urgency-bar" class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 text-white py-2 px-4 text-center text-sm font-bold"><span class="urgency-badge inline-block">🔥 ATENÇÃO: Vagas limitadas no grupo VIP! +4.300 pessoas já estão economizando 🔥</span>
-   </div><!-- Hero Section -->
-   <section class="relative px-4 py-12 text-center"><!-- Decorative elements -->
-    <div class="absolute top-10 left-10 text-6xl opacity-20 float-animation">
-     💰
-    </div>
-    <div class="absolute top-20 right-10 text-5xl opacity-20 float-animation" style="animation-delay: 1s;">
-     🛒
-    </div>
-    <div class="absolute bottom-10 left-20 text-4xl opacity-20 float-animation" style="animation-delay: 0.5s;">
-     🎁
-    </div><!-- Logo/Mascot -->
-    <div class="mb-6">
-     <div class="inline-block relative">
-      <div class="w-32 h-32 mx-auto rounded-full flex items-center justify-center shadow-2xl overflow-hidden border-4 border-orange-400"><img src="https://i.imgur.com/N9lDFvk.png" alt="MaluCÃO Mascote" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(to bottom right, #fbbf24, #f97316, #ef4444)'; this.alt='Mascote unavailable';">
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full bg-black overflow-auto"><!-- Background Effects -->
+   <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+   </div>
+   <div class="relative min-h-full flex flex-col items-center justify-center px-4 py-8"><!-- Main Content -->
+    <div class="max-w-lg w-full text-center space-y-6"><!-- Avatar with glow effect -->
+     <div class="relative inline-block float-animation">
+      <div class="absolute inset-0 bg-yellow-400 rounded-full blur-xl opacity-30"></div><img src="https://i.imgur.com/C4SFJBo.png" alt="Malucão das Promoções" loading="lazy" class="relative w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-yellow-400 shadow-2xl object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #fbbf24, #f59e0b)'; this.alt='Avatar';"> <!-- Sparkles around avatar -->
+      <div class="sparkle" style="top: 0; left: 50%; animation-delay: 0s;"></div>
+      <div class="sparkle" style="top: 50%; right: 0; animation-delay: 0.5s;"></div>
+      <div class="sparkle" style="bottom: 0; left: 30%; animation-delay: 1s;"></div>
+     </div><!-- Main Title -->
+     <div class="space-y-2">
+      <h1 class="text-3xl md:text-5xl font-black leading-tight"><span class="text-white">PARE DE RASGAR</span> <span class="text-yellow-300">DINHEIRO!</span></h1>
+     </div><!-- Description -->
+     <p id="description" class="text-gray-300 text-base md:text-lg px-4 leading-relaxed">Entre no nosso grupo VIP e receba os melhores cupons, promoções e bugs da internet</p><!-- CTA Buttons -->
+     <div class="space-y-4 pt-4"><!-- WhatsApp Button --> <a href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a?mode=gi_c" target="_blank" rel="noopener noreferrer" class="btn-whatsapp group flex items-center justify-center gap-3 w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg pulse-glow">
+       <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg><span id="whatsapp-text" class="text-base md:text-lg">ENTRE NO GRUPO VIP DO WHATSAPP</span> </a> <!-- Telegram Button --> <a href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer" class="btn-telegram group flex items-center justify-center gap-3 w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg">
+       <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+       </svg><span id="telegram-text" class="text-base md:text-lg">ENTRE NO CANAL DO TELEGRAM</span> </a>
+     </div><!-- Badge -->
+     <div class="inline-flex items-center gap-2 card-glass rounded-full px-6 py-2"><span class="text-green-400 text-xl">✓</span> <span id="subtitle" class="text-white font-semibold text-sm md:text-base">100% GRATUITO • +10.000 MEMBROS</span>
+     </div><!-- Trust badges -->
+     <div class="flex flex-wrap justify-center gap-4 pt-6 text-gray-400 text-sm">
+      <div class="flex items-center gap-2"><span class="text-yellow-400">⚡</span> <span>Cupons na hora que lançam</span>
       </div>
-      <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce">
-       GRÁTIS
+      <div class="flex items-center gap-2"><span class="text-yellow-400">🎯</span> <span>Promoções exclusivas</span>
       </div>
-     </div>
-    </div><!-- Title -->
-    <h1 id="hero-title" class="font-bangers text-5xl md:text-7xl text-white mb-4 tracking-wider drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">PARE DE PAGAR CARO! 🔥</h1>
-    <p id="hero-subtitle" class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">As <span class="text-orange-400 font-bold">MELHORES OFERTAS</span> da internet direto no seu celular! <br>
-     Economize até <span class="text-orange-400 font-bold">90%</span> em produtos de grandes marcas!</p><!-- Social Proof -->
-    <div class="flex flex-wrap justify-center gap-6 mb-10 text-white">
-     <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full"><span class="text-2xl font-bold text-orange-400">+4.000</span> <span class="text-sm block">membros ativos</span>
-     </div>
-     <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full"><span class="text-2xl font-bold text-orange-400">+1.000</span> <span class="text-sm block">ofertas por mês</span>
-     </div>
-     <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full"><span class="text-2xl font-bold text-orange-400">+R$ 100K</span> <span class="text-sm block">economizados</span>
-     </div>
-    </div><!-- CTA Buttons -->
-    <div class="flex flex-col items-center gap-4 mb-8">
-     <div class="flex items-center gap-6">
-      <svg class="w-12 h-12 text-white animate-bounce" style="animation-delay: 0.1s;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(90 12 12)" />
-      </svg>
-      <div class="bg-yellow-400 text-gray-900 font-bold px-6 py-2 rounded-full text-sm shadow-lg flex items-center gap-2">
-       🔥 TEM PROMOÇÃO BOA ROLANDO AGORA! 🔥
+      <div class="flex items-center gap-2"><span class="text-yellow-400">🔔</span> <span>Alertas de bugs</span>
       </div>
-      <svg class="w-12 h-12 text-white animate-bounce" style="animation-delay: 0.3s;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(90 12 12)" />
-      </svg>
-     </div><a id="whatsapp-btn" href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a?mode=gi_c" target="_blank" rel="noopener noreferrer" class="btn-whatsapp bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-xl px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 hover:from-green-400 hover:to-green-500">
-      <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-      </svg><span id="cta-whatsapp-text">ENTRAR NO GRUPO VIP GRÁTIS</span> <span class="fire-emoji">🔥</span> </a> <a id="telegram-btn" href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold px-8 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:from-blue-400 hover:to-blue-500 hover:scale-105">
-      <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-      </svg><span id="cta-telegram-text">Canal Telegram</span> </a>
-    </div><!-- Trust Badge -->
-    <p class="text-gray-400 text-sm flex items-center justify-center gap-2">
-     <svg class="w-5 h-5 text-green-500" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-     </svg> 100% Gratuito • Sem spam • Saia quando quiser</p>
-   </section><!-- Partners Carousel -->
-   <section class="py-12 bg-black/30">
-    <h2 class="text-center text-2xl font-bold text-white mb-8">Lojas Parceiras</h2>
-    <div class="carousel-wrapper">
-     <div class="carousel-inner">
-      <div class="carousel-track"><!-- Nike -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Nike logo unavailable';">
-       </div><!-- Amazon -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://static.vecteezy.com/ti/vetor-gratis/p1/14018563-logotipo-da-amazon-em-fundo-transparente-gratis-vetor.jpg" alt="Amazon" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Amazon logo unavailable';">
-       </div><!-- Mercado Livre -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://logodownload.org/wp-content/uploads/2016/08/mercado-livre-logo-1-2.png" alt="Mercado Livre" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Mercado Livre logo unavailable';">
-       </div><!-- Magalu -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://logodownload.org/wp-content/uploads/2014/06/magalu-logo-1.png" alt="Magalu" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Magalu logo unavailable';">
-       </div><!-- Shopee -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Shopee logo unavailable';">
-       </div>
-      </div><!-- Duplicate for seamless infinite loop -->
-      <div class="carousel-track"><!-- Nike -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Nike logo unavailable';">
-       </div><!-- Amazon -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://static.vecteezy.com/ti/vetor-gratis/p1/14018563-logotipo-da-amazon-em-fundo-transparente-gratis-vetor.jpg" alt="Amazon" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Amazon logo unavailable';">
-       </div><!-- Mercado Livre -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://logodownload.org/wp-content/uploads/2016/08/mercado-livre-logo-1-2.png" alt="Mercado Livre" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Mercado Livre logo unavailable';">
-       </div><!-- Magalu -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://logodownload.org/wp-content/uploads/2014/06/magalu-logo-1.png" alt="Magalu" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Magalu logo unavailable';">
-       </div><!-- Shopee -->
-       <div class="w-40 h-20 bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-transform shadow-lg p-4 mx-4"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee" loading="lazy" class="w-full h-full object-contain" onerror="console.error('Image failed to load:', this.src); this.style.background='#f3f4f6'; this.alt='Shopee logo unavailable';">
-       </div>
-      </div>
+     </div><!-- Footer -->
+     <div class="pt-8 pb-4">
+      <p class="text-gray-500 text-xs">💰 Economize todos os dias com as melhores ofertas da internet</p>
+     </div><!-- Copyright -->
+     <div class="pt-6 border-t border-gray-700">
+      <p class="text-gray-600 text-xs">© 2026 Malucão das Promoções. Todos os direitos reservados.</p>
      </div>
     </div>
-   </section><!-- Coupon Alert Section -->
-   <section class="py-12 bg-gradient-to-r from-orange-600 via-red-600 to-orange-600">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-     <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-      <div class="text-7xl animate-bounce">
-       🎟️
-      </div>
-      <div class="text-center md:text-left">
-       <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 font-bangers tracking-wide">CUPONS DE DESCONTO NA HORA QUE LANÇAM!</h2>
-       <p class="text-white/90 text-lg">Receba cupons exclusivos <span class="font-bold underline">INSTANTANEAMENTE</span> no seu WhatsApp! ⚡</p>
-       <p class="text-white/80 text-sm mt-2">Seja o primeiro a usar antes que expirem ou esgotem!</p>
-      </div>
-      <div class="text-7xl animate-bounce" style="animation-delay: 0.2s;">
-       💸
-      </div>
-     </div>
-    </div>
-   </section><!-- Testimonials / FOMO Section -->
-   <section class="py-12 bg-black/30">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-     <h2 class="text-2xl font-bold text-white mb-8">💬 O que Dizem os Membros</h2>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white/5 rounded-xl p-4">
-       <p class="text-gray-300 text-sm mb-2">"Economizei R$ 800 só esse mês! Melhor grupo que já entrei"</p>
-       <p class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐ - Maria S.</p>
-      </div>
-      <div class="bg-white/5 rounded-xl p-4">
-       <p class="text-gray-300 text-sm mb-2">"Peguei um iPhone com 70% OFF graças ao grupo!"</p>
-       <p class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐ - João P.</p>
-      </div>
-      <div class="bg-white/5 rounded-xl p-4">
-       <p class="text-gray-300 text-sm mb-2">"Estou fazendo até as compras de mercado pelo grupo, muita economia!"</p>
-       <p class="text-yellow-400 text-xs">⭐⭐⭐⭐⭐ - Ana L.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Final CTA Section -->
-   <section class="py-16 px-4 text-center">
-    <div class="max-w-2xl mx-auto">
-     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">⏰ Não Fique de Fora!</h2>
-     <p class="text-gray-300 mb-8">A cada minuto que passa, você pode estar perdendo uma oferta incrível. <span class="text-orange-400 font-bold">Entre agora e comece a economizar!</span></p><a id="final-whatsapp-btn" href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a?mode=gi_c" target="_blank" rel="noopener noreferrer" class="btn-whatsapp inline-flex bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-xl px-10 py-5 rounded-full items-center gap-3 transition-all duration-300 hover:from-green-400 hover:to-green-500">
-      <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-      </svg><span>ENTRAR AGORA - É GRÁTIS!</span> <span class="fire-emoji">🔥</span> </a>
-     <p class="text-gray-500 text-xs mt-6">🔒 Grupo seguro e moderado • Sem spam • Apenas ofertas reais</p>
-    </div>
-   </section><!-- Footer -->
-   <footer class="py-6 border-t border-white/10 text-center text-gray-500 text-sm">
-    <p>© 2026 MaluCÃO das Promoções - Todos os direitos reservados</p>
-   </footer>
+   </div>
   </div>
   <script>
     const defaultConfig = {
-      hero_title: 'PARE DE PAGAR CARO! 🔥',
-      hero_subtitle: 'As MELHORES OFERTAS da internet direto no seu celular! Economize até 90% em produtos de grandes marcas!',
-      cta_whatsapp: 'ENTRAR NO GRUPO VIP GRÁTIS',
-      cta_telegram: 'Canal Telegram',
-      whatsapp_link: 'https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a?mode=gi_c',
-      telegram_link: 'https://t.me/malucaodaspromocoes'
+      main_title: "PARE DE RASGAR DINHEIRO",
+      subtitle: "100% GRATUITO • +10.000 MEMBROS",
+      description: "Entre no nosso grupo VIP e receba os melhores cupons, promoções e bugs da internet",
+      whatsapp_text: "ENTRE NO GRUPO VIP DO WHATSAPP",
+      telegram_text: "ENTRE NO CANAL DO TELEGRAM",
+      background_color: "#000000",
+      text_color: "#ffffff",
+      accent_color: "#fbbf24",
+      whatsapp_color: "#22c55e",
+      telegram_color: "#3b82f6",
+      font_family: "Poppins",
+      font_size: 16
     };
 
-    async function onConfigChange(config) {
-      // Update title
-      const titleEl = document.getElementById('hero-title');
-      if (titleEl) titleEl.textContent = config.hero_title || defaultConfig.hero_title;
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(newConfig) {
+      config = { ...config, ...newConfig };
       
-      // Update subtitle
-      const subtitleEl = document.getElementById('hero-subtitle');
-      if (subtitleEl) {
-        const subtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
-        subtitleEl.innerHTML = subtitle.replace('MELHORES OFERTAS', '<span class="text-orange-400 font-bold">MELHORES OFERTAS</span>').replace('90%', '<span class="text-orange-400 font-bold">90%</span>');
-      }
+      // Update text content
+      document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
+      document.getElementById('subtitle').textContent = config.subtitle || defaultConfig.subtitle;
+      document.getElementById('description').textContent = config.description || defaultConfig.description;
+      document.getElementById('whatsapp-text').textContent = config.whatsapp_text || defaultConfig.whatsapp_text;
+      document.getElementById('telegram-text').textContent = config.telegram_text || defaultConfig.telegram_text;
       
-      // Update CTA texts
-      const ctaWhatsapp = document.getElementById('cta-whatsapp-text');
-      if (ctaWhatsapp) ctaWhatsapp.textContent = config.cta_whatsapp || defaultConfig.cta_whatsapp;
+      // Update colors
+      const wrapper = document.getElementById('app-wrapper');
+      wrapper.style.backgroundColor = config.background_color || defaultConfig.background_color;
       
-      const ctaTelegram = document.getElementById('cta-telegram-text');
-      if (ctaTelegram) ctaTelegram.textContent = config.cta_telegram || defaultConfig.cta_telegram;
+      // Update font
+      const customFont = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${customFont}, sans-serif`;
       
-      // Update links
-      const whatsappLink = config.whatsapp_link || defaultConfig.whatsapp_link;
-      const telegramLink = config.telegram_link || defaultConfig.telegram_link;
-      
-      document.getElementById('whatsapp-btn').href = whatsappLink;
-      document.getElementById('telegram-btn').href = telegramLink;
-      document.getElementById('final-whatsapp-btn').href = whatsappLink;
+      // Update font size proportionally
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.getElementById('main-title').style.fontSize = `${baseSize * 2.5}px`;
+      document.getElementById('description').style.fontSize = `${baseSize}px`;
     }
 
     function mapToCapabilities(config) {
       return {
-        recolorables: [],
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.whatsapp_color || defaultConfig.whatsapp_color,
+            set: (value) => {
+              config.whatsapp_color = value;
+              window.elementSdk.setConfig({ whatsapp_color: value });
+            }
+          },
+          {
+            get: () => config.telegram_color || defaultConfig.telegram_color,
+            set: (value) => {
+              config.telegram_color = value;
+              window.elementSdk.setConfig({ telegram_color: value });
+            }
+          }
+        ],
         borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
       };
     }
 
     function mapToEditPanelValues(config) {
       return new Map([
-        ['hero_title', config.hero_title || defaultConfig.hero_title],
-        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-        ['cta_whatsapp', config.cta_whatsapp || defaultConfig.cta_whatsapp],
-        ['cta_telegram', config.cta_telegram || defaultConfig.cta_telegram],
-        ['whatsapp_link', config.whatsapp_link || defaultConfig.whatsapp_link],
-        ['telegram_link', config.telegram_link || defaultConfig.telegram_link]
+        ["main_title", config.main_title || defaultConfig.main_title],
+        ["subtitle", config.subtitle || defaultConfig.subtitle],
+        ["description", config.description || defaultConfig.description],
+        ["whatsapp_text", config.whatsapp_text || defaultConfig.whatsapp_text],
+        ["telegram_text", config.telegram_text || defaultConfig.telegram_text]
       ]);
     }
 
@@ -290,5 +246,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5a7176467cc250',t:'MTc2OTcwNzY3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ca50922e18f0290',t:'MTc3MDQ4OTgzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
