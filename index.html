@@ -52,23 +52,29 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full overflow-auto" style="background: #f8f8fa; color: #2a2a2a;">
-  <div id="app-wrapper" class="w-full min-h-full relative" style="background: #f8f8fa;"><!-- Decorative blobs -->
+  <div id="app-wrapper" class="w-full min-h-full relative" style="background: #f8f8fa;">
+   <!-- Decorative blobs -->
    <div class="gradient-blob" style="width:500px;height:500px;top:-100px;left:-150px;background:#e53935;"></div>
    <div class="gradient-blob" style="width:400px;height:400px;top:300px;right:-100px;background:#1db954;"></div>
    <div class="gradient-blob" style="width:350px;height:350px;bottom:100px;left:20%;background:#1e88e5;"></div>
-   <div class="max-w-5xl mx-auto px-5 py-10 relative z-10"><!-- Nav -->
+   <div class="max-w-5xl mx-auto px-5 py-10 relative z-10">
+    <!-- Nav -->
     <nav class="flex items-center justify-between mb-12 anim-up">
-     <div class="flex items-center gap-2"><span id="nav-brand" class="text-xl font-bold" style="color:#f0f0f0;"></span>
+     <div class="flex items-center gap-2">
+      <span id="nav-brand" class="text-xl font-bold" style="color:#f0f0f0;"></span>
      </div>
     </nav><!-- Hero -->
     <section class="text-center mb-14">
      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 anim-up anim-d1" id="hero-title" style="color:#1a1a1a;"></h1>
      <p id="hero-subtitle" class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 anim-up anim-d2" style="color:#999;">Cansado de perder os melhores cupons? Entre nos nossos grupos!</p><!-- CTA Buttons -->
-     <div class="flex flex-col gap-4 max-w-md mx-auto anim-up anim-d3"><a id="btn-wa" href="https://chat.whatsapp.com/E3a2SlGF6vjCdplCpcZKAf?mode=gi_t" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center gap-3 py-4 px-6 rounded-2xl text-white font-bold text-lg btn-pulse w-full" style="background:linear-gradient(135deg,#25d366,#1ba855); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);"> <img src="https://img.freepik.com/vetores-premium/icone-redondo-do-aplicativo-whatsapp-mensageiro-popular-logo-da-midia-social_277909-873.jpg?semt=ais_hybrid&amp;w=740&amp;q=80" alt="WhatsApp" loading="lazy" style="width:32px;height:32px;object-fit:contain;background-color:transparent;clip-path:circle(45%);" onerror="console.error('Image failed to load:', this.src); this.alt='WhatsApp indisponível';"><span id="btn-wa-text">Receber no WhatsApp</span> <span class="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-black px-2 py-1 rounded-full animate-pulse">Novidade</span> </a> <a id="btn-tg" href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 py-4 px-6 rounded-2xl text-white font-bold text-lg btn-pulse w-full" style="background:linear-gradient(135deg,#0088cc,#006ba3); box-shadow: 0 8px 24px rgba(0, 136, 204, 0.2);">
-       <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.332-2.97-.924c-.645-.213-.658-.645.135-.96l11.566-4.458c.54-.203 1.01.13.84.95z" fill="white" />
+     <div class="flex flex-col gap-4 max-w-md mx-auto anim-up anim-d3">
+      <a id="btn-wa" href="https://chat.whatsapp.com/E3a2SlGF6vjCdplCpcZKAf?mode=gi_t" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center gap-3 py-4 px-6 rounded-2xl text-white font-bold text-lg btn-pulse w-full" style="background:linear-gradient(135deg,#25d366,#1ba855); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);"> <img src="https://img.freepik.com/vetores-premium/icone-redondo-do-aplicativo-whatsapp-mensageiro-popular-logo-da-midia-social_277909-873.jpg?semt=ais_hybrid&amp;w=740&amp;q=80" alt="WhatsApp" loading="lazy" style="width:32px;height:32px;object-fit:contain;background-color:transparent;clip-path:circle(45%);" onerror="console.error('Image failed to load:', this.src); this.alt='WhatsApp indisponível';"><span id="btn-wa-text">Receber no WhatsApp</span> <span class="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-black px-2 py-1 rounded-full animate-pulse">Novidade</span> </a> <a id="btn-tg" href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 py-4 px-6 rounded-2xl text-white font-bold text-lg btn-pulse w-full" style="background:linear-gradient(135deg,#0088cc,#006ba3); box-shadow: 0 8px 24px rgba(0, 136, 204, 0.2);">
+       <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.332-2.97-.924c-.645-.213-.658-.645.135-.96l11.566-4.458c.54-.203 1.01.13.84.95z" fill="white" />
        </svg><span id="btn-tg-text">Confira nosso canal no Telegram</span> </a>
       <div class="flex items-center justify-center gap-3 mt-2 flex-wrap">
-       <div class="flex items-center gap-2" style="color:#e53935;"><i data-lucide="users" style="width:20px;height:20px;"></i> <span class="font-bold text-sm">+15.000 pessoas economizando</span>
+       <div class="flex items-center gap-2" style="color:#e53935;">
+        <i data-lucide="users" style="width:20px;height:20px;"></i> <span class="font-bold text-sm">+15.000 pessoas economizando</span>
        </div><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold" style="background:#e53935;color:#ffffff;"> <i data-lucide="flame" style="width:14px;height:14px;"></i> Comunidade Ativa </span>
       </div>
       <p class="text-xs mt-3" style="color:#999;">✓ Totalmente gratuito</p>
@@ -76,35 +82,39 @@
     </section><!-- Features Grid -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
      <div class="rounded-2xl p-6 card-hover anim-up anim-d2" style="background:#ffffff; border:1px solid #e0e0e0;">
-      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(229,57,53,0.15);"><i data-lucide="ticket" style="width:24px;height:24px;color:#e53935;"></i>
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(229,57,53,0.15);">
+       <i data-lucide="ticket" style="width:24px;height:24px;color:#e53935;"></i>
       </div>
       <h3 class="font-bold text-lg mb-2" style="color:#f0f0f0;">Cupons exclusivos</h3>
       <p class="text-sm" style="color:#888;">Ofertas que você não encontra em qualquer lugar.</p>
      </div>
      <div class="rounded-2xl p-6 card-hover anim-up anim-d3" style="background:#ffffff; border:1px solid #e0e0e0;">
-      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(29,185,84,0.15);"><i data-lucide="calendar" style="width:24px;height:24px;color:#1db954;"></i>
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(29,185,84,0.15);">
+       <i data-lucide="calendar" style="width:24px;height:24px;color:#1db954;"></i>
       </div>
       <h3 class="font-bold text-lg mb-2" style="color:#f0f0f0;">Ofertas diárias</h3>
       <p class="text-sm" style="color:#888;">Novas promoções todos os dias.</p>
      </div>
      <div class="rounded-2xl p-6 card-hover anim-up anim-d4" style="background:#ffffff; border:1px solid #e0e0e0;">
-      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(30,136,229,0.15);"><i data-lucide="zap" style="width:24px;height:24px;color:#1e88e5;"></i>
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(30,136,229,0.15);">
+       <i data-lucide="zap" style="width:24px;height:24px;color:#1e88e5;"></i>
       </div>
       <h3 class="font-bold text-lg mb-2" style="color:#f0f0f0;">Alertas rápidos</h3>
       <p class="text-sm" style="color:#888;">Receba primeiro e aproveite antes de acabar.</p>
      </div>
      <div class="rounded-2xl p-6 card-hover anim-up anim-d5" style="background:#ffffff; border:1px solid #e0e0e0;">
-      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,193,7,0.15);"><i data-lucide="shield-check" style="width:24px;height:24px;color:#ffc107;"></i>
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,193,7,0.15);">
+       <i data-lucide="shield-check" style="width:24px;height:24px;color:#ffc107;"></i>
       </div>
       <h3 class="font-bold text-lg mb-2" style="color:#f0f0f0;">Sem spam</h3>
       <p class="text-sm" style="color:#888;">Só promoções reais e conteúdo organizado.</p>
      </div>
     </section><!-- Bottom CTA -->
     <section class="rounded-3xl overflow-hidden anim-up anim-d5" style="background:linear-gradient(135deg,#ffffff,#f5f5f7); border:1px solid #e0e0e0;">
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-0"><!-- Dog illustration area -->
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <!-- Dog illustration area -->
       <div class="flex items-center justify-center p-8 md:p-12">
-       <div class="text-center">
-        <img src="https://i.imgur.com/K44JjW9.jpg" alt="Cão farejando ofertas" loading="lazy" style="max-width:100%;height:auto;border-radius:20px;object-fit:cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='#e53935'; this.alt='Imagem indisponível';">
+       <div class="text-center"><img src="https://i.imgur.com/K44JjW9.jpg" alt="Cão farejando ofertas" loading="lazy" style="max-width:100%;height:auto;border-radius:20px;object-fit:cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='#e53935'; this.alt='Imagem indisponível';">
        </div>
       </div><!-- Text -->
       <div class="flex flex-col justify-center p-8 md:p-12">
@@ -152,12 +162,11 @@
     const titleText = c.hero_title;
     const parts = titleText.split('promoções e cupons');
     if (parts.length === 2) {
-      heroTitle.innerHTML = `${parts[0]}<span style="color:${c.primary_action_color};">promoções e cupons</span>${parts[1]}`;
+      heroTitle.innerHTML = `<span style="color:${c.text_color};">${parts[0]}</span><span style="color:${c.primary_action_color};">promoções e cupons</span><span style="color:${c.text_color};">${parts[1]}</span>`;
     } else {
       heroTitle.textContent = titleText;
     }
     heroTitle.style.fontFamily = fontStack;
-    heroTitle.style.color = c.text_color;
 
     const sub = document.getElementById('hero-subtitle');
     sub.textContent = c.hero_subtitle;
@@ -221,5 +230,5 @@
     ])
   });
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f318bbfe15b4835',t:'MTc3NzMzMTkwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f31b41a76d5ad78',t:'MTc3NzMzMzU1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
