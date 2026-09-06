@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>maluCÃO das promoções — Promoções insanas todos os dias</title>
+  <title>maluCÃO das promoções — Ofertas e cupons todos os dias</title>
   <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/runningquarentena/site-malucao/refs/heads/main/Imagens/logo.jfif">
-  <meta name="description" content="Cupons, bugs e promoções de até 90% OFF. Entre grátis no grupo com +20.000 membros.">
+  <meta name="description" content="Cupons, ofertas relâmpago e promoções de até 70% OFF. Entre grátis na comunidade com +20.000 membros.">
 
   <!-- Open Graph: preview ao compartilhar o link no WhatsApp/Telegram -->
-  <meta property="og:title" content="maluCÃO das promoções — até 90% OFF">
-  <meta property="og:description" content="Cupons, bugs e promoções insanas. Grupo 100% gratuito, +20.000 membros.">
-  <meta property="og:image" content="https://SEU-DOMINIO.com/og-image.jpg">
+  <meta property="og:title" content="maluCÃO das promoções — até 70% de desconto">
+  <meta property="og:description" content="Cupons, ofertas relâmpago e promoções selecionadas. Comunidade 100% gratuita com +20.000 membros.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/APONTAMENTO.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Fonte carregada sem bloquear a renderização -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet"></noscript>
 
   <style>
     :root {
@@ -26,32 +31,33 @@
       --green-dark: #15803d;
       --green-light: #dcfce7;
       --blue: #2563eb;
-      --text: #111827;
-      --text-muted: #6b7280;
+      --text: #0f172a;        /* azul-marinho profundo para títulos */
+      --text-muted: #475569;  /* cinza-ardósia para apoio */
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      padding-bottom: 5.5rem; /* espaço para a barra fixa não cobrir o rodapé */
     }
 
     main {
       max-width: 32rem;
       margin: 0 auto;
-      padding: 2rem 1rem 3rem;
+      padding: 1.25rem 1rem 3rem;
     }
 
     /* ---- Header ---- */
-    header { text-align: center; margin-bottom: 2rem; }
+    header { text-align: center; margin-bottom: 1.25rem; }
 
     .avatar {
-      width: 6rem;
-      height: 6rem;
-      margin: 0 auto 1.5rem;
+      width: 4.5rem;
+      height: 4.5rem;
+      margin: 0 auto 1rem;
       border-radius: 50%;
       overflow: hidden;
       border: 2px solid var(--green);
@@ -59,29 +65,31 @@
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .group-name {
-      font-size: 0.875rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
-
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.85rem;
       font-weight: 900;
-      line-height: 1.25;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
       margin-bottom: 1rem;
     }
-    h1 .highlight { color: var(--green); }
+    h1 .highlight {
+      display: inline-block;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      border-radius: 0.5rem;
+      padding: 0.05em 0.35em;
+      margin-top: 0.15em;
+      white-space: nowrap;
+      box-shadow: 0 6px 16px rgba(22,163,74,0.3);
+    }
 
     .badges {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
     }
 
     /* ---- CTA Buttons ---- */
@@ -114,7 +122,7 @@
     .btn-whatsapp {
       background: var(--green);
       box-shadow: 0 4px 16px rgba(22,163,74,0.35);
-      animation: pulse 1.8s ease-in-out infinite;
+      animation: pulse 1.8s ease-in-out 3;
     }
     .btn-whatsapp:hover { background: var(--green-dark); box-shadow: 0 6px 22px rgba(22,163,74,0.45); }
 
@@ -123,25 +131,136 @@
       50% { transform: scale(1.04); }
     }
 
+    /* Telegram: botão secundário, menor, para não competir com o WhatsApp */
     .btn-telegram {
-      background: var(--blue);
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(37,99,235,0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: auto;
+      align-self: center;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--blue);
+      background: transparent;
+      border: 1.5px solid var(--blue);
+      border-radius: 999px;
+      box-shadow: none;
+      transition: background 0.2s ease, color 0.2s ease;
     }
+    .btn-telegram svg { width: 1.05rem; height: 1.05rem; }
     .btn-telegram:hover,
-    .btn-telegram:focus-visible {
-      transform: scale(1.05);
-      box-shadow: 0 6px 22px rgba(37,99,235,0.4);
+    .btn-telegram:focus-visible { background: var(--blue); color: #fff; }
+
+    /* linha de redução de risco logo abaixo do botão */
+    .trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: -0.25rem;
     }
-    .btn-telegram:active { transform: scale(1.02); }
+    .trust span { white-space: nowrap; }
+    .trust span::before { content: "✓ "; color: var(--green); font-weight: 700; }
+
+    /* ---- Dúvidas / objeções ---- */
+    .faq { margin-top: 0; }
+    .faq h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.9rem;
+    }
+    .faq details {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-size: 1.25rem; font-weight: 400; color: var(--green); }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.5rem; }
 
     .description {
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.5;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
+      margin: -0.25rem auto 0.75rem;
+      max-width: 26rem;
     }
+
+    /* ---- Carrossel de lojas parceiras ---- */
+    .partners { margin: 0.25rem 0 0.5rem; }
+    .partners-title {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+    .marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    }
+    .marquee-track { display: flex; width: max-content; animation: marquee 20s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-group { display: flex; align-items: center; flex-shrink: 0; }
+    .store { display: flex; align-items: center; justify-content: center; height: 3.5rem; padding: 0 1.1rem; }
+    .store img { width: 3rem; height: 3rem; object-fit: contain; border-radius: 0.75rem; display: block; }
+    .store-name { font-weight: 800; font-size: 1rem; white-space: nowrap; color: var(--text); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+      .marquee-group[aria-hidden="true"] { display: none; }
+      .marquee { mask-image: none; -webkit-mask-image: none; }
+    }
+
+    /* ---- Barra fixa com o CTA do WhatsApp ---- */
+    .sticky-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 90;
+      padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      transform: translateY(110%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar .btn {
+      max-width: 32rem;
+      margin: 0 auto;
+      padding: 0.85rem;
+      font-size: 0.98rem;
+      animation: none; /* sem pulso aqui: fica na tela o tempo todo */
+    }
+    @media (prefers-reduced-motion: reduce) { .sticky-bar { transition: none; } }
+
+    /* ---- Rodapé ---- */
+    .site-footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 2rem;
+    }
+    .site-footer a { color: var(--text-muted); }
 
     hr {
       border: none;
@@ -152,10 +271,18 @@
     /* ---- Promo section ---- */
     .section-title {
       text-align: center;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--green);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text);
       margin-bottom: 1.5rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: -1rem 0 1.25rem;
     }
 
     .promo-list { display: flex; flex-direction: column; gap: 1rem; }
@@ -171,20 +298,21 @@
 
     .promo-card img {
       width: 100%;
-      height: auto;
+      height: auto;          /* imagem inteira, sem corte */
       border-radius: 0.5rem;
       margin-bottom: 0.75rem;
       display: block;
-      background: var(--green-light); /* placeholder até você trocar a imagem */
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      background: #f3f4f6;
     }
 
     .promo-caption {
       text-align: center;
       font-size: 0.9rem;
       font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
+    .promo-caption strong { color: var(--green-dark); font-weight: 800; }
 
     /* ---- Footer CTA ---- */
     .footer-cta { text-align: center; margin-top: 2rem; }
@@ -196,9 +324,9 @@
     }
 
     .footer-headline {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--green);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
       margin-bottom: 1.5rem;
       line-height: 1.4;
     }
@@ -206,83 +334,7 @@
     @media (prefers-reduced-motion: reduce) {
       .btn { transition: none; }
       .btn-whatsapp { animation: none; }
-      .btn-telegram:hover,
-      .btn-telegram:focus-visible,
-      .btn-telegram:active { transform: none; }
-    }
-
-    /* ---- Overlay de CTA (aparece ao chegar no fim da página) ---- */
-    .bottom-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
-    .bottom-overlay.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .bottom-overlay-card {
-      position: relative;
-      width: 100%;
-      max-width: 24rem;
-      text-align: center;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 1.25rem;
-      padding: 2.5rem 1.75rem;
-      box-shadow: 0 10px 40px rgba(17,24,39,0.15);
-      transform: scale(0.92);
-      transition: transform 0.35s ease;
-    }
-    .bottom-overlay.visible .bottom-overlay-card {
-      transform: scale(1);
-    }
-
-    .bottom-overlay-close {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      width: 2rem;
-      height: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      line-height: 1;
-      cursor: pointer;
-    }
-    .bottom-overlay-close:hover { color: var(--text); }
-
-    .bottom-overlay-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 1.75rem;
-      line-height: 1.4;
-    }
-
-    .bottom-overlay .btn-whatsapp {
-      font-size: 1.15rem;
-      padding: 1.25rem;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .bottom-overlay,
-      .bottom-overlay-card { transition: none; }
+      .btn-telegram { transition: none; }
     }
   </style>
 
@@ -309,54 +361,90 @@
 
     <header>
       <div class="avatar">
-        <!-- TODO: troque pelo arquivo real do logo -->
-        <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/refs/heads/main/Imagens/logo.jfif" alt="Logo maluCÃO das promoções">
+        <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/refs/heads/main/Imagens/logo.jfif" alt="Logo maluCÃO das promoções" width="72" height="72">
       </div>
 
-      <p class="group-name">maluCÃO das promoções</p>
+      <h1>Ofertas e cupons selecionados com até <span class="highlight">70% de desconto</span></h1>
 
-      <h1>Promoções Insanas de até <span class="highlight">90% OFF</span></h1>
+      <p class="description">
+        Receba diariamente as melhores ofertas e cupons, sempre com links oficiais das lojas.
+      </p>
 
-      <div class="badges">
-        <span>✅ 100% Gratuito</span>
-        <span>👥 +20.000 membros</span>
-      </div>
+      <p class="badges">✅ 100% gratuito &nbsp;·&nbsp; 👥 Comunidade de +20 mil</p>
     </header>
 
     <div class="cta-group">
-      <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/E3a2SlGF6vjCdplCpcZKAf" target="_blank" rel="noopener noreferrer">
+      <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.16 8.16 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.07-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg>
-        ENTRAR NO GRUPO DO WHATSAPP
+        RECEBER DIRETAMENTE NO WHATSAPP
       </a>
       <a class="btn btn-telegram" href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.94 6.87-1.66 7.83c-.125.56-.454.7-.92.436l-2.545-1.877-1.228 1.183c-.136.136-.25.25-.512.25l.183-2.596 4.727-4.27c.205-.183-.045-.285-.318-.102l-5.84 3.68-2.516-.786c-.547-.17-.557-.547.114-.81l9.83-3.79c.455-.166.853.11.685.85z"/></svg>
-        ENTRAR NO CANAL DO TELEGRAM
+        Prefere Telegram?
       </a>
+      <p class="trust">
+        <span>Só admins postam</span>
+        <span>Sem spam</span>
+        <span>Sai quando quiser</span>
+      </p>
     </div>
 
-    <p class="description">
-      Receba diariamente as melhores promoções, cupons e BUGS com links confiáveis.
-    </p>
+    <section class="partners" aria-label="Lojas parceiras">
+      <p class="partners-title">Somos afiliados das maiores lojas do Brasil</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/amazon%20logo.webp" alt="Amazon" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/mercado%20livre%20logo.png" alt="Mercado Livre" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/shopee%20logo.webp" alt="Shopee" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+            <div class="store"><img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/nike%20logo.webp" alt="Nike" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'store-name',textContent:this.alt}))"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <hr>
 
     <section>
-      <h2 class="section-title">Algumas das promoções mais absurdas que já passaram por aqui 🔥</h2>
+      <h2 class="section-title">Algumas das ofertas que já passaram pelo grupo 🔥</h2>
+      <p class="section-sub">Todas já encerradas — as próximas chegam primeiro pra quem está dentro.</p>
 
       <div class="promo-list">
         <div class="promo-card">
-          <img src="https://github.com/runningquarentena/site-malucao/blob/main/Imagens/COM%20OU%20SEM.png?raw=true" alt="Comprovante de compra de JBL Boombox 4 por R$ 1.869">
-          <p class="promo-caption">JBL Boombox 4 por R$ 1.869 (DESCONTÃO 😱)</p>
+          <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/prova-jbl.webp" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/COM%20OU%20SEM.png'" alt="Comprovante de compra de JBL Boombox 4 por R$ 1.885 com cupom" width="800" height="600" fetchpriority="high">
+          <p class="promo-caption">JBL Boombox 4 — de R$ 2.449 por <strong>R$ 1.885</strong> com o cupom do grupo</p>
         </div>
 
         <div class="promo-card">
-          <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/signature.png" alt="Comprovante de compra de smartphone por R$ 1.699">
-          <p class="promo-caption">Smartphone de R$ 8.999 por R$ 1.699 (MENOR VALOR HISTÓRICO! 😱)</p>
+          <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/prova-smartphone.webp" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/signature.png'" alt="Comprovante de compra de smartphone por R$ 1.699" width="619" height="652" loading="lazy">
+          <p class="promo-caption">Smartphone Motorola — de R$ 8.999 por <strong>R$ 1.699</strong> na Amazon</p>
         </div>
 
         <div class="promo-card">
-          <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/all.png" alt="Diversos produtos recebidos por um membro do grupo">
-          <p class="promo-caption">Esse seguidor aproveitou, hein! 😁</p>
+          <img src="https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/prova-entregas.webp" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/runningquarentena/site-malucao/main/Imagens/all.png'" alt="Diversos produtos recebidos por um membro do grupo" width="580" height="722" loading="lazy">
+          <p class="promo-caption">Compras de um membro que chegaram na mesma semana</p>
         </div>
       </div>
     </section>
@@ -364,62 +452,59 @@
     <hr>
 
     <div class="footer-cta">
-      <p class="footer-warning">⚠️ Essas promoções já acabaram.</p>
-      <p class="footer-headline">Quem estava no grupo aproveitou.<br>Entre agora e não perca as próximas!</p>
-      <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/E3a2SlGF6vjCdplCpcZKAf" target="_blank" rel="noopener noreferrer">
+      <p class="footer-warning">⚠️ Estas ofertas já foram encerradas.</p>
+      <p class="footer-headline">Quem já estava no grupo aproveitou.<br>Entre agora e receba as próximas em primeira mão.</p>
+      <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.16 8.16 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.07-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg>
-        ENTRAR NO GRUPO DO WHATSAPP
+        RECEBER DIRETAMENTE NO WHATSAPP
       </a>
     </div>
 
-    <!-- Sentinela: quando isso entra na tela, a pessoa chegou no fim da página -->
-    <div id="bottom-sentinel" aria-hidden="true" style="height: 1px;"></div>
+    <hr>
+
+    <section class="faq" aria-label="Dúvidas frequentes">
+      <h2>Dúvidas rápidas</h2>
+      <details>
+        <summary>É grátis mesmo?</summary>
+        <p>Sim, 100%. Quando você compra pelo nosso link, a loja nos paga uma pequena comissão — o preço para você é o mesmo ou menor. Você nunca paga nada à comunidade.</p>
+      </details>
+      <details>
+        <summary>Vai lotar meu WhatsApp?</summary>
+        <p>Não. Só os administradores podem postar, então o grupo tem apenas ofertas e cupons — sem conversa, sem correntes. Você pode silenciar e olhar quando quiser.</p>
+      </details>
+      <details>
+        <summary>Os links são seguros?</summary>
+        <p>Todos os links levam ao site oficial da loja (Amazon, Mercado Livre, Shopee, Nike etc.). Você compra na loja, com a garantia da loja.</p>
+      </details>
+    </section>
+
+    <footer class="site-footer">
+      maluCÃO das promoções · Comunidade de ofertas e cupons<br>
+      <a href="https://t.me/malucaodaspromocoes" target="_blank" rel="noopener noreferrer">Canal no Telegram</a>
+    </footer>
 
   </main>
 
-  <!-- Overlay de CTA que aparece no fim da página -->
-  <div class="bottom-overlay" id="bottom-overlay">
-    <div class="bottom-overlay-card">
-      <button class="bottom-overlay-close" id="bottom-overlay-close" aria-label="Fechar">×</button>
-      <p class="bottom-overlay-title">Não perca as próximas promoções.<br>Entre agora no grupo!</p>
-      <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/E3a2SlGF6vjCdplCpcZKAf" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.16 8.16 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.07-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg>
-        ENTRAR NO GRUPO DO WHATSAPP
-      </a>
-    </div>
+  <!-- Barra fixa: aparece quando o botão principal sai da tela -->
+  <div class="sticky-bar" id="sticky-bar">
+    <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/DJqPtmjJtL59SIg7o3Nm1a" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.16 8.16 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.07-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg>
+      RECEBER DIRETAMENTE NO WHATSAPP
+    </a>
   </div>
 
   <script>
     (function () {
-      var sentinel = document.getElementById('bottom-sentinel');
-      var overlay = document.getElementById('bottom-overlay');
-      var closeBtn = document.getElementById('bottom-overlay-close');
-      var dismissed = false; // fechado manualmente até a pessoa subir e descer de novo
-
-      var observer = new IntersectionObserver(function (entries) {
-        var atBottom = entries[0].isIntersecting;
-        if (atBottom && !dismissed) {
-          overlay.classList.add('visible');
-        } else if (!atBottom) {
-          overlay.classList.remove('visible');
-          dismissed = false; // saiu do fim da página, reseta o fechamento manual
-        }
+      var bar = document.getElementById('sticky-bar');
+      var buttons = document.querySelectorAll('main .btn-whatsapp');
+      if (!bar || !buttons.length || !('IntersectionObserver' in window)) return;
+      // A barra só aparece quando nenhum botão grande do WhatsApp está na tela
+      var onScreen = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target); });
+        bar.classList.toggle('visible', onScreen.size === 0);
       }, { threshold: 0 });
-
-      observer.observe(sentinel);
-
-      closeBtn.addEventListener('click', function () {
-        overlay.classList.remove('visible');
-        dismissed = true;
-      });
-
-      // Esc também fecha
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          overlay.classList.remove('visible');
-          dismissed = true;
-        }
-      });
+      buttons.forEach(function (b) { io.observe(b); });
     })();
   </script>
 </body>
