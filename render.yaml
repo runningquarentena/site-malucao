@@ -7,3 +7,28 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+    headers:
+      # Obriga HTTPS nas próximas visitas (1 ano, inclui subdomínios)
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      # Impede que a página seja embutida em iframe de outro site (clickjacking)
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Content-Security-Policy
+        value: frame-ancestors 'none'
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=(), payment=()
+      # Imagens podem ficar em cache por 30 dias
+      - path: /Imagens/*
+        name: Cache-Control
+        value: public, max-age=2592000
