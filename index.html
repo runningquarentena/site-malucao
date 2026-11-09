@@ -328,6 +328,70 @@
       .btn-whatsapp { animation: none; }
       .btn-telegram { transition: none; }
     }
+
+    /* ===== Tema BLACK NOVEMBER ===== */
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --green-light: rgba(34,197,94,0.15);
+      --blue: #60a5fa;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --gold: #facc15;
+    }
+    body {
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(250,204,21,0.10), transparent 70%),
+        var(--bg);
+    }
+    .bf-ribbon {
+      background: var(--gold);
+      color: #09090b;
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 0.45rem 0;
+    }
+    .bf-ribbon-track { display: inline-flex; gap: 2rem; animation: marquee 18s linear infinite; padding-left: 2rem; }
+    @media (prefers-reduced-motion: reduce) { .bf-ribbon-track { animation: none; } }
+
+    .bf-tag {
+      display: inline-block;
+      margin: 0 auto 0.9rem;
+      padding: 0.35rem 0.85rem;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 1.85rem; }
+    h1 .bf { color: var(--gold); display: block; font-size: 2.3rem; letter-spacing: -0.03em; }
+
+    .avatar { border-color: var(--gold); box-shadow: 0 0 0 6px rgba(250,204,21,0.15), 0 4px 24px rgba(250,204,21,0.25); }
+
+
+    .btn-whatsapp { color: #052e16; box-shadow: 0 4px 22px rgba(34,197,94,0.35); }
+    .btn-whatsapp:hover { color: #052e16; }
+    .btn-telegram:hover, .btn-telegram:focus-visible { color: #09090b; }
+
+    .store img { background: #fff; padding: 0.3rem; }
+
+    .promo-card { box-shadow: none; }
+    .promo-card img { background: #27272a; }
+    .promo-caption strong { color: var(--gold); }
+
+    .footer-headline .bf { color: var(--gold); }
+
+    .sticky-bar { background: rgba(9,9,11,0.92); }
   </style>
 
   <!-- Meta Pixel Code -->
@@ -349,6 +413,7 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
+  <div class="bf-ribbon" aria-hidden="true"><div class="bf-ribbon-track"><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span><span>⚡ Black November</span><span>Promoção todo dia</span><span>11.11</span><span>Black Friday</span><span>Cupons direto no WhatsApp</span></div></div>
   <main>
 
     <header>
@@ -356,11 +421,14 @@
         <img src="Imagens/logo.jfif" alt="Logo maluCÃO das promoções" width="72" height="72">
       </div>
 
-      <h1>Promoções reais e cupons, <span class="highlight">direto no seu WhatsApp</span></h1>
+      <p class="bf-tag">⚡ Black Friday o mês inteiro</p>
+
+      <h1><span class="bf">Black November</span>Ofertas e cupons todo dia, <span class="highlight">direto no seu WhatsApp</span></h1>
 
       <p class="description">
-        Nossa equipe garimpa as ofertas todos os dias e avisa o grupo antes de esgotar.
+        Do 11.11 à Black Friday, novembro tem promoção todos os dias. Nossa equipe garimpa as ofertas e avisa o grupo antes de esgotar.
       </p>
+
 
       <p class="badges">✅ 100% gratuito &nbsp;·&nbsp; 👥 Comunidade de +20 mil</p>
     </header>
@@ -445,7 +513,7 @@
 
     <div class="footer-cta">
       <p class="footer-warning">⚠️ Estas ofertas já foram encerradas.</p>
-      <p class="footer-headline">Quem já estava no grupo aproveitou.<br>Entre agora e receba as próximas em primeira mão.</p>
+      <p class="footer-headline">Quem já estava no grupo aproveitou.<br>Neste <span class="bf">Black November</span>, as ofertas chegam primeiro pra quem está dentro.</p>
       <a class="btn btn-whatsapp" data-cta="rodape" href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.16 8.16 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.07-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg>
         RECEBER DIRETAMENTE NO WHATSAPP
@@ -516,6 +584,7 @@
       }, { threshold: 0 });
       buttons.forEach(function (b) { io.observe(b); });
     })();
+
   </script>
 </body>
 </html>
