@@ -2,152 +2,36 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Grupo de promoções no WhatsApp | maluCÃO das promoções</title>
-<link rel="icon" type="image/jpeg" href="/Imagens/logo.jfif">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrando no grupo… | maluCÃO das promoções</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0a0f0c">
+<!-- Pixel da Meta (Site zap) -->
 <script>
-  // Pixel só roda no site de verdade (não dispara em prévia/teste)
-  var NO_SITE = /malucaopromos\.com\.br$/.test(location.hostname);
-  if (NO_SITE) {
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','896974309616307');
-    fbq('track','PageView');
-    fbq('trackCustom','AbriuPaginaGrupo',{canal:'whatsapp'});   // só abriu: NÃO é lead
-  } else {
-    window.fbq = function(){ console.log('[prévia] pixel:', [].slice.call(arguments)); };
-  }
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','896974309616307');
+fbq('track','PageView');
+fbq('track','Lead',{content_name:'whatsapp',content_category:'pagina-grupo'});
+fbq('trackCustom','EntrouNoGrupo',{canal:'whatsapp',posicao:'pagina-grupo'});
+</script>
+<script>
+  var GRUPO = 'https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg';
+  setTimeout(function(){ location.replace(GRUPO); }, 700);
 </script>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#0a0f0c;--card:#111814;--line:#1f2a23;--txt:#f4f7f5;--mut:#93a39a;--g:#22c55e;--g2:#16a34a;--y:#facc15}
-  body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--txt);min-height:100vh;
-       background:radial-gradient(120% 60% at 50% -10%,rgba(34,197,94,.18),transparent 60%),var(--bg)}
-  main{max-width:380px;margin:0 auto;padding:36px 20px 28px;text-align:center}
-
-  /* logo com anel girando */
-  .ring{position:relative;width:96px;height:96px;margin:0 auto 14px;border-radius:50%;padding:3px}
-  .ring::before{content:"";position:absolute;inset:0;border-radius:50%;
-       background:conic-gradient(from 0deg,var(--g),var(--y),var(--g2),var(--g));animation:spin 4s linear infinite}
-  .ring img{position:relative;width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:3px solid var(--bg)}
-  @keyframes spin{to{transform:rotate(360deg)}}
-
-  h1{font-size:22px;font-weight:700;letter-spacing:-.2px}
-  .status{display:inline-flex;align-items:center;gap:7px;margin:8px 0 22px;font-size:14px;color:var(--mut)}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 1.6s infinite}
-  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}100%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
-
-  /* botão com brilho passando */
-  .btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
-       background:linear-gradient(180deg,#25d366,#18a84f);color:#fff;font-weight:700;font-size:18px;
-       padding:18px;border-radius:14px;text-decoration:none;box-shadow:0 8px 24px rgba(34,197,94,.25)}
-  .btn svg{width:24px;height:24px;flex:none}
-  .btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
-       background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);
-       animation:shine 3s ease-in-out infinite}
-  @keyframes shine{0%,55%{left:-60%}100%{left:130%}}
-  .btn:active{transform:scale(.985)}
-  .btn.loading{pointer-events:none}
-  .alt{display:inline-block;margin-top:14px;font-size:13px;color:var(--mut)}
-
-  /* prévia do grupo: mensagens chegando */
-  .chat{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;text-align:left;overflow:hidden}
-  .chat-top{display:flex;align-items:center;gap:10px;padding:2px 4px 10px;border-bottom:1px solid var(--line);margin-bottom:10px}
-  .chat-top img{width:30px;height:30px;border-radius:50%}
-  .chat-top b{font-size:14px;display:block}
-  .chat-top small{font-size:12px;color:var(--mut)}
-  .msgs{display:flex;flex-direction:column;gap:8px;min-height:150px}
-  .msg{max-width:88%;background:#1a2620;border-radius:4px 12px 12px 12px;padding:9px 11px;font-size:14px;line-height:1.35;
-       opacity:0;transform:translateY(8px);animation:inMsg .45s ease forwards}
-  .msg small{display:block;text-align:right;font-size:11px;color:var(--mut);margin-top:3px}
-  .typing{display:inline-flex;gap:4px;background:#1a2620;border-radius:12px;padding:10px 12px;width:max-content}
-  .typing i{width:6px;height:6px;border-radius:50%;background:var(--mut);animation:blink 1.2s infinite}
-  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
-  @keyframes inMsg{to{opacity:1;transform:none}}
-  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important}.msg{opacity:1;transform:none}}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#000;color:#fff;font-family:system-ui,Arial,sans-serif;text-align:center}
+  a{display:inline-block;margin-top:18px;background:#18a34a;color:#fff;font-weight:800;
+    padding:14px 26px;border-radius:999px;text-decoration:none;font-size:18px}
 </style>
 </head>
 <body>
-<main>
-  <div class="ring"><img src="/Imagens/logo.jfif" alt="maluCÃO das promoções" width="96" height="96"></div>
-  <h1>maluCÃO das promoções</h1>
-  <div class="status"><span class="dot"></span>Grupo aberto · entrada gratuita</div>
-
-  <a id="entrar" class="btn" href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.030-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.876.52 3.632 1.42 5.13L2 22l4.994-1.393A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.174a8.160 8.160 0 0 1-4.244-1.18l-.304-.18-3.147.879.84-3.070-.198-.315A8.166 8.166 0 0 1 3.826 12c0-4.508 3.667-8.174 8.175-8.174 4.508 0 8.174 3.666 8.174 8.174 0 4.508-3.666 8.174-8.174 8.174z"/></svg><span id="btxt">Entrar no grupo</span></a>
-  <a id="alt" class="alt" href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg">Não abriu? Toque aqui</a>
-
-  <div class="chat" aria-hidden="true">
-    <div class="chat-top"><img src="/Imagens/logo.jfif" alt=""><div><b>maluCÃO das Promoções</b><small>só administradores enviam mensagens</small></div></div>
-    <div class="msgs" id="msgs"></div>
+  <div>
+    <div style="font-size:22px;font-weight:800">Abrindo o grupo no WhatsApp…</div>
+    <a href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg">ENTRAR NO GRUPO</a>
   </div>
-</main>
-
-<script>
-  // mensagens de exemplo chegando em loop (sem preços inventados)
-  (function(){
-    var M=['🔥 Oferta relâmpago na Amazon','🎟️ Cupom novo liberado no Mercado Livre','⚡ Achado do dia na Shopee','💥 Preço caiu: corre que acaba rápido'];
-    var box=document.getElementById('msgs'), i=0;
-    function hora(){var d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
-    function next(){
-      var t=document.createElement('div');t.className='typing';t.innerHTML='<i></i><i></i><i></i>';box.appendChild(t);
-      setTimeout(function(){
-        t.remove();
-        var m=document.createElement('div');m.className='msg';m.innerHTML=M[i%M.length]+'<small>'+hora()+'</small>';
-        box.appendChild(m); i++;
-        while(box.children.length>3) box.removeChild(box.firstChild);
-        setTimeout(next,1600);
-      },900);
-    }
-    setTimeout(next,500);
-  })();
-  // texto do botão ao tocar
-  document.getElementById('entrar').addEventListener('click',function(){
-    this.classList.add('loading'); document.getElementById('btxt').textContent='Abrindo o WhatsApp…';
-    var b=this; setTimeout(function(){b.classList.remove('loading');document.getElementById('btxt').textContent='Entrar no grupo';},4000);
-  });
-</script>
-<script>
-  var CODE = 'E9EsCG4IZPO0SFuUdMrewg';
-  var WEB  = 'https://chat.whatsapp.com/' + CODE;
-  var ua = navigator.userAgent || '';
-  var isAndroid = /Android/i.test(ua);
-  var isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-  // Link que abre o app do WhatsApp direto (pula a página "Abrir app / WhatsApp Web")
-  function appLink(){
-    if (isAndroid) return 'intent://chat.whatsapp.com/' + CODE +
-      '#Intent;scheme=https;package=com.whatsapp;S.browser_fallback_url=' + encodeURIComponent(WEB) + ';end';
-    if (isIOS) return 'whatsapp://chat?code=' + CODE;
-    return WEB; // computador
-  }
-
-  var jaContou = false;
-  function contarLead(origem){
-    if (jaContou) return; jaContou = true;
-    fbq('track','Lead',{content_name:'whatsapp',content_category:'pagina-grupo-v3',origem:origem});
-    fbq('trackCustom','CliqueEntrarGrupo',{canal:'whatsapp',origem:origem});
-  }
-
-  document.getElementById('entrar').addEventListener('click', function(e){
-    e.preventDefault();
-    contarLead('botao');
-    var destino = appLink();
-    setTimeout(function(){
-      location.href = destino;
-      // iPhone: se o app não abrir em 1,5s, manda pro link normal do convite
-      if (isIOS) setTimeout(function(){ if (!document.hidden) location.href = WEB; }, 1500);
-    }, 250); // tempo pro pixel enviar o evento
-  });
-
-  document.getElementById('alt').addEventListener('click', function(){ contarLead('link-alternativo'); });
-</script>
 </body>
 </html>
