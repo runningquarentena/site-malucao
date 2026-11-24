@@ -18,8 +18,28 @@ fbq('track','Lead',{content_name:'whatsapp',content_category:'pagina-grupo'});
 fbq('trackCustom','EntrouNoGrupo',{canal:'whatsapp',posicao:'pagina-grupo'});
 </script>
 <script>
-  var GRUPO = 'https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg';
-  setTimeout(function(){ location.replace(GRUPO); }, 700);
+  var CODE = 'E9EsCG4IZPO0SFuUdMrewg';
+  var GRUPO = 'https://chat.whatsapp.com/' + CODE;
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+  // Abre o app do WhatsApp direto (sem a página "Abrir app / WhatsApp Web")
+  function appLink(){
+    if (isAndroid) return 'intent://chat.whatsapp.com/' + CODE +
+      '#Intent;scheme=https;package=com.whatsapp;S.browser_fallback_url=' + encodeURIComponent(GRUPO) + ';end';
+    if (isIOS) return 'whatsapp://chat?code=' + CODE;
+    return GRUPO;
+  }
+
+  function abrir(){
+    var link = appLink();
+    location.href = link;
+    // Reserva: se o app não abriu (navegador bloqueou), cai no link normal do convite
+    if (link !== GRUPO) setTimeout(function(){ if (!document.hidden) location.replace(GRUPO); }, 1500);
+  }
+
+  setTimeout(abrir, 400); // tempo pro pixel enviar o evento
 </script>
 <style>
   body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
@@ -31,7 +51,10 @@ fbq('trackCustom','EntrouNoGrupo',{canal:'whatsapp',posicao:'pagina-grupo'});
 <body>
   <div>
     <div style="font-size:22px;font-weight:800">Abrindo o grupo no WhatsApp…</div>
-    <a href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg">ENTRAR NO GRUPO</a>
+    <a id="btn" href="https://chat.whatsapp.com/E9EsCG4IZPO0SFuUdMrewg">ENTRAR NO GRUPO</a>
   </div>
+  <script>
+    document.getElementById('btn').addEventListener('click', function(e){ e.preventDefault(); abrir(); });
+  </script>
 </body>
 </html>
